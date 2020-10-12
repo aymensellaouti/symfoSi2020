@@ -21,7 +21,8 @@ class MyNewController extends AbstractController
     }
 
     /**
-     * @Route("/cv/{nom}/{prenom}/{age}/{section}", name="cv")
+     *
+     * @Route("/{_locale<fr|en>}/cv/{nom}/{prenom}/{age<[1-9]\d?>}/{section<GL|RT>}/{_format?html}", name="cv")
      */
     public function cvAction($nom,$prenom,$age,$section) {
         return $this->render('cv/cv.html.twig',[
