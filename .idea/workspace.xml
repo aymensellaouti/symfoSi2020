@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="80299529-5538-4259-960c-c4c9c75bf743" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TodoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TodoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/todo/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/todo/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +167,9 @@
       <workItem from="1601385536168" duration="4540000" />
       <workItem from="1601394864300" duration="611000" />
       <workItem from="1601905063607" duration="5556000" />
-      <workItem from="1601969889631" duration="2362000" />
+      <workItem from="1601969889631" duration="4436000" />
+      <workItem from="1602485496612" duration="653000" />
+      <workItem from="1602491229801" duration="42000" />
     </task>
     <servers />
   </component>
@@ -173,10 +177,11 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="527" y="232" key="#Notifications" timestamp="1601905082666">
+    <state x="527" y="232" key="#Notifications" timestamp="1602485542702">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="527" y="232" key="#Notifications/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1601905082666" />
+    <state x="527" y="232" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1602485542702" />
     <state x="556" y="119" key="NewPhpClassDialog" timestamp="1601389191670">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
