@@ -11,7 +11,13 @@
     <table border="2">
     {% for note in notes %}
         <tr>
-            <td>{{ note }}</td>
+            <td
+                    {% if loop.first or loop.last %}
+                        style="font-weight: bold;"
+                    {% endif %}
+            >
+                Note numéro {{ loop.index0 }}: {{ note }}
+            </td>
         </tr>
     {% endfor  %}
     </table>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table">
+        <tr class="table-active">
+            <td>Firstname</td>
+            <td>Name</td>
+            <td>Age</td>
+        </tr>
+        {% for personne in personnes %}
+            <tr class="table-{% if loop.index is odd%}danger{% else %}warning{% endif %}">
+                <td>{{ personne.firstname }}</td>
+                <td>{{ personne.name }}</td>
+                <td>{{ personne.age }}</td>
+            </tr>
+        {% else %}
+            <div class="alert alert-danger">
+                Aucune personne n'est présente
+            </div>
+        {% endfor %}
+
+    </table>
+</body>
+</html>
