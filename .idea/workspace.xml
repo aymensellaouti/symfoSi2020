@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80299529-5538-4259-960c-c4c9c75bf743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/test.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/twig/color.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/twig/layout.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/twig/page1.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/notes/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/notes/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/todo/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/todo/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +175,9 @@
       <workItem from="1602485496612" duration="653000" />
       <workItem from="1602491229801" duration="2445000" />
       <workItem from="1602509244661" duration="3072000" />
-      <workItem from="1602572422438" duration="6191000" />
+      <workItem from="1602572422438" duration="6735000" />
+      <workItem from="1602931023604" duration="658000" />
+      <workItem from="1603096919236" duration="9228000" />
     </task>
     <servers />
   </component>
@@ -200,9 +194,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="556" y="119" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1601389191670" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1601913742918">
+    <state x="277" y="57" key="SettingsEditor" timestamp="1602579653497">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1602579653497" />
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601913742918" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1601906199065">
       <screen x="0" y="0" width="1536" height="824" />
