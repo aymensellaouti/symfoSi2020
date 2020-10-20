@@ -15,7 +15,9 @@
                             href="{{ path('personne.detail', {id: personne.id}) }}"
                             target="_blank"
                             class="card-link">Détails</a>
-                    <a href="#" class="card-link">Delete</a>
+                    <a
+                            href="{{ path('personne.delete', {id: personne.id}) }}"
+                            class="card-link">Delete</a>
                 </div>
             </div>
         {% endfor %}

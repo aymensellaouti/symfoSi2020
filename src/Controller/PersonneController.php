@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Personne;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -20,6 +21,24 @@ class PersonneController extends AbstractController
         // Récupérer le Repository
         $repository = $this->getDoctrine()->getRepository(Personne::class);
         $personnes = $repository->findAll();
+        return $this->render('personne/index.html.twig', [
+            'personnes' => $personnes,
+        ]);
+    }
+
+    /**
+     * @Route("/findCriteria/{page?1}", name="personne.list")
+     */
+    public function personnesWithCriteria($page)
+    {
+        // Récupérer le Repository
+        $repository = $this->getDoctrine()->getRepository(Personne::class);
+        $personnes = $repository->findBy(
+            [],
+            [],
+            3,               /*1 2 3 4 5 */
+            ($page - 1) * 3 /*0 3 6 9 12 */
+        );
         return $this->render('personne/index.html.twig', [
             'personnes' => $personnes,
         ]);
@@ -68,7 +87,7 @@ class PersonneController extends AbstractController
     /**
      * @Route("/delete/{id}", name="personne.delete")
      */
-    public function deletePersonne($id) {
+    public function deletePersonne(Personne $personne = null) {
         /*
          * Chercher la personne d'id $id
          * s'il elle existe je la supprime avec la methode remove
@@ -76,5 +95,14 @@ class PersonneController extends AbstractController
          * Sinon j'affiche un message d'erreur
          * Et dans les deux cas j'affiche la liste des personnes
          * */
+
+        if ($personne) {
+           $manager = $this->getDoctrine()->getManager();
+           $manager->remove($personne);
+           $manager->flush();
+        } else {
+            $this->addFlash('error', 'Personne innexistante');
+        }
+        return $this->redirectToRoute('personne.list');
     }
 }
