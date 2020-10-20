@@ -17,33 +17,64 @@ class PersonneController extends AbstractController
      */
     public function index()
     {
+        // Récupérer le Repository
+        $repository = $this->getDoctrine()->getRepository(Personne::class);
+        $personnes = $repository->findAll();
         return $this->render('personne/index.html.twig', [
-            'controller_name' => 'PersonneController',
+            'personnes' => $personnes,
         ]);
     }
 
     /**
-     * @Route("/add", name="personne.add")
+     * @Route("/add/{name}/{firstname}/{age}", name="personne.add")
      */
-    public function addPersonne() {
+    public function addPersonne($name, $firstname, $age) {
         // Nous permet de récupérer Doctrine
         $doctrine = $this->getDoctrine();
         // Nous permet de récupérer le manager
         $manager = $doctrine->getManager();
-
         $personne = new Personne();
-        $personne->setFirstname('Richie');
-        $personne->setName('Tamoufe');
-        $personne->setAge(22);
-
-
+        $personne->setFirstname($firstname);
+        $personne->setName($name);
+        $personne->setAge($age);
         // Ajoute l'objet personne à la transaction
         $manager->persist($personne);
-        $manager->persist($personne2);
-        $manager->persist($personne3);
-
         //Execute la transaction
         $manager->flush();
-        return new Response('<body><h1>Ajouté avec succès</h1></body>');
+        return $this->redirectToRoute('personne.list');
+    }
+
+    /**
+     * @Route("/detail/{id}", name="personne.detail")
+     */
+    public function findPersonneById($id) {
+        // Je récupére le répo
+        $repository = $this->getDoctrine()->getRepository(Personne::class);
+        /*
+         * Je vais aller chercher la personne avec la méthode find
+         *
+         * Si elle existe je l'envoi vers la page d'affichage des détails d'une personne
+         * Sinon je crée un flash d'erreur et je le renvoi vers la liste
+         * */
+        $personne = $repository->find($id);
+        if ($personne) {
+            return $this->render('personne/detail.html.twig', ['personne' => $personne]);
+        } else {
+            $this->addFlash('error', 'Personne innexistante');
+            return $this->redirectToRoute('personne.list');
+        }
+    }
+
+    /**
+     * @Route("/delete/{id}", name="personne.delete")
+     */
+    public function deletePersonne($id) {
+        /*
+         * Chercher la personne d'id $id
+         * s'il elle existe je la supprime avec la methode remove
+         *
+         * Sinon j'affiche un message d'erreur
+         * Et dans les deux cas j'affiche la liste des personnes
+         * */
     }
 }

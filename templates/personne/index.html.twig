@@ -3,18 +3,21 @@
 {% block title %}Hello PersonneController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'G:/symfony projects/si22020/src/Controller/PersonneController.php'|file_link(0) }}">src/Controller/PersonneController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'G:/symfony projects/si22020/templates/personne/index.html.twig'|file_link(0) }}">templates/personne/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="row">
+        {% for personne in personnes %}
+            <div class="card col-3 mb-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ personne.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ personne.firstname }}</h6>
+                    <p class="card-text">{{ personne.age}} ans</p>
+                    <a
+                            href="{{ path('personne.detail', {id: personne.id}) }}"
+                            target="_blank"
+                            class="card-link">Détails</a>
+                    <a href="#" class="card-link">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
