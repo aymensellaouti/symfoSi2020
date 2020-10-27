@@ -47,4 +47,32 @@ class PersonneRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function getPersonnesByIntervalAge($min = 0, $max = 0) {
+        $qb = $this->createQueryBuilder('p');
+        $this->extractPersonneByAge($qb, $min, $max);
+        $qb->orderBy('p.age', 'asc');
+        return $qb->getQuery()->getResult();
+    }
+
+    public function getAvgAgePersonnesByIntervalAge($min = 0, $max = 0) {
+        $qb = $this->createQueryBuilder('p');
+        $qb->select('avg(p.age) as ageMoyen');
+        $this->extractPersonneByAge($qb, $min, $max);
+        return $qb->getQuery()->getSingleScalarResult();
+    }
+
+    private function extractPersonneByAge($qb, $min, $max) {
+        if($min) {
+            $qb->andWhere('p.age > :ageMin')
+                ->setParameter('ageMin', $min);
+        }
+        if($max) {
+            $qb->andWhere('p.age < :ageMax')
+               ->setParameter('ageMax', $max);
+        }
+        return $qb;
+    }
+
+
+
 }

@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80299529-5538-4259-960c-c4c9c75bf743" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/si22020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/si22020.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PersonneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonneController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/personne/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personne/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Personne.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Personne.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PersonneRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PersonneRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/personne/detail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personne/detail.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +144,9 @@
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iBdtGRwWwiJsu0vgCspfgj3JOc" />
@@ -179,7 +190,8 @@
       <workItem from="1602572422438" duration="6735000" />
       <workItem from="1602931023604" duration="658000" />
       <workItem from="1603096919236" duration="9658000" />
-      <workItem from="1603198697303" duration="6936000" />
+      <workItem from="1603198697303" duration="6992000" />
+      <workItem from="1603801112089" duration="5535000" />
     </task>
     <servers />
   </component>
@@ -192,6 +204,10 @@
     </state>
     <state x="527" y="232" key="#Notifications/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1601905082666" />
     <state x="527" y="232" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1602485542702" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603802112733">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603802112733" />
     <state x="556" y="119" key="NewPhpClassDialog" timestamp="1601389191670">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

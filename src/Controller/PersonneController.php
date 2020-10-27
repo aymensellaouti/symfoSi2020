@@ -27,7 +27,7 @@ class PersonneController extends AbstractController
     }
 
     /**
-     * @Route("/findCriteria/{page?1}", name="personne.list")
+     * @Route("/findCriteria/{page?1}", name="personne.list.criteria")
      */
     public function personnesWithCriteria($page)
     {
@@ -35,7 +35,7 @@ class PersonneController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(Personne::class);
         $personnes = $repository->findBy(
             [],
-            [],
+            ['age'=>'desc'],
             3,               /*1 2 3 4 5 */
             ($page - 1) * 3 /*0 3 6 9 12 */
         );
@@ -104,5 +104,28 @@ class PersonneController extends AbstractController
             $this->addFlash('error', 'Personne innexistante');
         }
         return $this->redirectToRoute('personne.list');
+    }
+
+    /**
+     * @Route("/age/{min?0}/{max?0}",name="personne.find.age")
+     */
+    public function getPersonneByAge($min, $max) {
+        $repository = $this->getDoctrine()->getRepository(Personne::class);
+        $personnes = $repository->getPersonnesByIntervalAge($min,$max);
+        return $this->render('personne/index.html.twig', [
+            'personnes' => $personnes,
+        ]);
+    }
+
+    /**
+     * @Route("/avgage/{min?0}/{max?0}",name="personne.find.avgage")
+     */
+    public function getAvgPersonneByAge($min, $max) {
+        $repository = $this->getDoctrine()->getRepository(Personne::class);
+        $stats = $repository->getAvgAgePersonnesByIntervalAge($min,$max);
+        dd($stats);
+        return $this->render('personne/index.html.twig', [
+            'personnes' => $personnes,
+        ]);
     }
 }
