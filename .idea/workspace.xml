@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80299529-5538-4259-960c-c4c9c75bf743" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/si22020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/si22020.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PersonneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonneController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Personne.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Personne.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PersonneRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PersonneRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/personne/detail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personne/detail.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/PersonneFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/PersonneFixtures.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,6 +153,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -191,7 +183,8 @@
       <workItem from="1602931023604" duration="658000" />
       <workItem from="1603096919236" duration="9658000" />
       <workItem from="1603198697303" duration="6992000" />
-      <workItem from="1603801112089" duration="5535000" />
+      <workItem from="1603801112089" duration="6770000" />
+      <workItem from="1603872149151" duration="6185000" />
     </task>
     <servers />
   </component>
@@ -204,6 +197,14 @@
     </state>
     <state x="527" y="232" key="#Notifications/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1601905082666" />
     <state x="527" y="232" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1602485542702" />
+    <state x="572" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1603880016902">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="572" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1603880016902" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603879417671">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603879417671" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603802112733">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
