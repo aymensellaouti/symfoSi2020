@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Personne;
+use App\Form\PersonneType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -46,9 +47,9 @@ class PersonneController extends AbstractController
     }
 
     /**
-     * @Route("/add/{name}/{firstname}/{age}", name="personne.add")
+     * @Route("/add1/{name}/{firstname}/{age}", name="personne.add1")
      */
-    public function addPersonne($name, $firstname, $age) {
+    public function addPersonne1($name, $firstname, $age) {
         // Nous permet de récupérer Doctrine
         $doctrine = $this->getDoctrine();
         // Nous permet de récupérer le manager
@@ -67,7 +68,7 @@ class PersonneController extends AbstractController
     /**
      * @Route("/update/{id}/{name}/{firstname}/{age}", name="personne.update")
      */
-    public function updatePersonne($name, $firstname, $age, Personne $personne = null) {
+    public function updatePersonne1($name, $firstname, $age, Personne $personne = null) {
         if (!$personne) {
             $this->addFlash('error', 'Personne innexistante');
             return $this->redirectToRoute('personne.list');
@@ -164,6 +165,23 @@ class PersonneController extends AbstractController
         $personnes = $repository->getPersonnesByJobIntervalAge(0,0,$jobname);
         return $this->render('personne/index.html.twig', [
             'personnes' => $personnes,
+        ]);
+    }
+
+    /**
+     * @Route("/edit/{id?0}", name="personne.edit")
+     */
+    public function addPersonne(
+        Personne $personne = null
+    ) {
+        if(!$personne)
+            $personne = new Personne();
+        $form = $this->createForm(PersonneType::class, $personne);
+        $form->remove('createdAt');
+        $form->remove('updatedAt');
+        $form->remove('pieceIdentite');
+        return $this->render('personne/add.html.twig', [
+            'form' => $form->createView()
         ]);
     }
 }
