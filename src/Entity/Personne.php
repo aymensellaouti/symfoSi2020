@@ -23,7 +23,7 @@ class Personne
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=60)
+     * @ORM\Column(type="string", length=65)
      */
     private $name;
 
