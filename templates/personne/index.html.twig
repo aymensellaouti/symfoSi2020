@@ -11,6 +11,7 @@
                     <h5 class="card-title">{{ personne.name }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{ personne.firstname }}</h6>
                     <p class="card-text">{{ personne.age}} ans</p>
+                    <p class="card-text">{{ personne.job.designation}} </p>
                     <a
                             href="{{ path('personne.detail', {id: personne.id}) }}"
                             target="_blank"

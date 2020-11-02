@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80299529-5538-4259-960c-c4c9c75bf743" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/TimeStamp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/PersonneFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/PersonneFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PersonneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonneController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Hobbie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Hobbie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Personne.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Personne.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/PieceIdentite.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/PieceIdentite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PersonneRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PersonneRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/personne/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personne/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +191,9 @@
       <workItem from="1603096919236" duration="9658000" />
       <workItem from="1603198697303" duration="6992000" />
       <workItem from="1603801112089" duration="6770000" />
-      <workItem from="1603872149151" duration="6185000" />
+      <workItem from="1603872149151" duration="6526000" />
+      <workItem from="1604301130086" duration="1673000" />
+      <workItem from="1604317039573" duration="4523000" />
     </task>
     <servers />
   </component>
@@ -209,9 +218,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603802112733" />
-    <state x="556" y="119" key="NewPhpClassDialog" timestamp="1601389191670">
+    <state x="556" y="119" key="NewPhpClassDialog" timestamp="1604321439708">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="556" y="119" key="NewPhpClassDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1604321439708" />
     <state x="556" y="119" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1601389191670" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1602579653497">
       <screen x="0" y="0" width="1536" height="824" />

@@ -21,6 +21,7 @@ class PersonneController extends AbstractController
         // Récupérer le Repository
         $repository = $this->getDoctrine()->getRepository(Personne::class);
         $personnes = $repository->findAll();
+
         return $this->render('personne/index.html.twig', [
             'personnes' => $personnes,
         ]);
@@ -62,6 +63,31 @@ class PersonneController extends AbstractController
         $manager->flush();
         return $this->redirectToRoute('personne.list');
     }
+
+    /**
+     * @Route("/update/{id}/{name}/{firstname}/{age}", name="personne.update")
+     */
+    public function updatePersonne($name, $firstname, $age, Personne $personne = null) {
+        if (!$personne) {
+            $this->addFlash('error', 'Personne innexistante');
+            return $this->redirectToRoute('personne.list');
+        }
+        // Nous permet de récupérer Doctrine
+        $doctrine = $this->getDoctrine();
+        // Nous permet de récupérer le manager
+        $manager = $doctrine->getManager();
+        //$personne = new Personne();
+        $personne->setFirstname($firstname);
+        $personne->setName($name);
+        $personne->setAge($age);
+        // Ajoute l'objet personne à la transaction
+        $manager->persist($personne);
+        //Execute la transaction
+        $manager->flush();
+        return $this->redirectToRoute('personne.list');
+    }
+
+
 
     /**
      * @Route("/detail/{id}", name="personne.detail")
@@ -124,6 +150,18 @@ class PersonneController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(Personne::class);
         $stats = $repository->getAvgAgePersonnesByIntervalAge($min,$max);
         dd($stats);
+        return $this->render('personne/index.html.twig', [
+            'personnes' => $personnes,
+        ]);
+    }
+    //Legal Secretary
+
+    /**
+     * @Route("/job/{min?0}/{max?0}/{jobname}",name="personne.find.job")
+     */
+    public function getAvgPersonneByAgeAndJobName($min, $max, $jobname) {
+        $repository = $this->getDoctrine()->getRepository(Personne::class);
+        $personnes = $repository->getPersonnesByJobIntervalAge(0,0,$jobname);
         return $this->render('personne/index.html.twig', [
             'personnes' => $personnes,
         ]);

@@ -48,14 +48,19 @@ class PersonneRepository extends ServiceEntityRepository
     }
     */
     public function getPersonnesByIntervalAge($min = 0, $max = 0) {
+        //select *  from personne p
         $qb = $this->createQueryBuilder('p');
+        //where p.age < :min and p.age<:max
         $this->extractPersonneByAge($qb, $min, $max);
+        // orderBy p.age asc
         $qb->orderBy('p.age', 'asc');
         return $qb->getQuery()->getResult();
     }
 
     public function getAvgAgePersonnesByIntervalAge($min = 0, $max = 0) {
+
         $qb = $this->createQueryBuilder('p');
+
         $qb->select('avg(p.age) as ageMoyen');
         $this->extractPersonneByAge($qb, $min, $max);
         return $qb->getQuery()->getSingleScalarResult();
@@ -72,7 +77,21 @@ class PersonneRepository extends ServiceEntityRepository
         }
         return $qb;
     }
-
-
+    /*
+     * select * from personne p, job j
+     * where (p.job_id = j.id and j.designation = :des)
+     *
+     * */
+    public function getPersonnesByJobIntervalAge($min = 0, $max = 0, $jobDesignation) {
+        // select * from personne p
+        $qb = $this->createQueryBuilder('p');
+        $qb->innerJoin('p.job','j')
+            ->where('j.designation = :jobDesignation')
+            ->setParameter('jobDesignation', $jobDesignation)
+        ;
+        $this->extractPersonneByAge($qb, $min, $max);
+        $qb->orderBy('p.age', 'asc');
+        return $qb->getQuery()->getResult();
+    }
 
 }

@@ -2,14 +2,17 @@
 
 namespace App\Entity;
 
+use App\Controller\TimeStamp;
 use App\Repository\PieceIdentiteRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=PieceIdentiteRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
 class PieceIdentite
 {
+    use TimeStamp;
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

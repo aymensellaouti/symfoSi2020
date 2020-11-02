@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Controller\TimeStamp;
 use App\Repository\JobRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -9,9 +10,12 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=JobRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
 class Job
 {
+    // Va faire un copier de tous ce qui se trouve dans le trait et colle le ici
+    use TimeStamp;
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Controller\TimeStamp;
 use App\Repository\PersonneRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -9,9 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=PersonneRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
 class Personne
 {
+    use TimeStamp;
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -48,6 +51,7 @@ class Personne
      * @ORM\ManyToOne(targetEntity=Job::class, inversedBy="personnes")
      */
     private $job;
+
 
     /**
      * @ORM\ManyToMany(targetEntity=Hobbie::class)

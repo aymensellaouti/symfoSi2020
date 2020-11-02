@@ -2,14 +2,18 @@
 
 namespace App\Entity;
 
+use App\Controller\TimeStamp;
 use App\Repository\HobbieRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=HobbieRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
 class Hobbie
 {
+    use TimeStamp;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
