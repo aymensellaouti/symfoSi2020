@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80299529-5538-4259-960c-c4c9c75bf743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/personne/add.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/test/cv.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/test/cvForm.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PersonneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonneController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TimeStamp.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TimeStamp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Hobbie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Hobbie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/PieceIdentite.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/PieceIdentite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PersonneType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PersonneType.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +186,8 @@
       <workItem from="1603801112089" duration="6770000" />
       <workItem from="1603872149151" duration="6526000" />
       <workItem from="1604301130086" duration="1673000" />
-      <workItem from="1604317039573" duration="13281000" />
+      <workItem from="1604317039573" duration="14126000" />
+      <workItem from="1604473949434" duration="1340000" />
     </task>
     <servers />
   </component>

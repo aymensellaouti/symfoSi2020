@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Job;
 use App\Entity\Personne;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -24,6 +25,10 @@ class PersonneType extends AbstractType
             ->add('pieceIdentite')
             ->add('job', EntityType::class, [
                 'class' => Job::class,
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('j')
+                       ->orderBy('j.designation', 'ASC');
+                },
                 'choice_label' => 'designation'
             ])
             ->add('hobbies')
