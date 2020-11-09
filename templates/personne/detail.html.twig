@@ -6,7 +6,12 @@
             <div class="col-md-6 img">
                 <img
                         width="150px" height="150px"
-                        src="{{ personne.path }}"  alt="" class="rounded-circle">
+                        {% if ('http' in personne.path) %}
+                            src="{{ personne.path }}"
+                        {% else %}
+                            src="{{ asset(personne.path) }}"
+                        {% endif %}
+                         class="rounded-circle">
             </div>
             <div class="col-md-6 details">
                 <blockquote>

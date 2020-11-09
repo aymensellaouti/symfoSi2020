@@ -182,14 +182,26 @@ class PersonneController extends AbstractController
         $form->remove('createdAt');
         $form->remove('updatedAt');
         $form->remove('pieceIdentite');
+        $form->remove('path');
         $form->handleRequest($request);
-        if($form->isSubmitted()) {
+        if($form->isSubmitted() && $form->isValid()) {
+
             $imageInfos = $form->get('image')->getData();
-            $imageName = $imageInfos->getClientOriginalName();
-            $newImageName = md5(uniqid()).$imageName;
-            $imageInfos->move($this->getParameter('personne_directory'),
-                $newImageName);
-            $personne->setPath('uploads/personne/'.$newImageName);
+            /*
+             * Définir le nom de l'image à mettre dans le projet (the uploaded image)
+             * Lors del'upload on ne veut pas avoir 2 images avec le meme nom
+             * */
+            if ($imageInfos) {
+                $imageName = $imageInfos->getClientOriginalName();
+                $newImageName = md5(uniqid()).$imageName;
+                /*
+                 * Copier l'image temporaire qu'on a uploadé dans un dossier qu'on va spécifier
+                 * */
+                $imageInfos->move($this->getParameter('personne_directory'),
+                    $newImageName);
+                $personne->setPath('uploads/personne/'.$newImageName);
+            }
+
             //Ajouter la personne dans la base de données
             $em = $this->getDoctrine()->getManager();
             $em->persist($personne);

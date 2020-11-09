@@ -20,8 +20,10 @@ class PersonneType extends AbstractType
             ->add('name')
             ->add('firstname')
             ->add('age')
+            ->add('path')
             ->add('image', FileType::class, [
-                'mapped' => false
+                'mapped' => false,
+                'required' => false
             ] )
             ->add('createdAt')
             ->add('updatedAt')
@@ -43,6 +45,9 @@ class PersonneType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Personne::class,
+            'attr' => [
+                'novalidate' => 'novalidate', // comment me to reactivate the html5 validation!  🚥
+            ]
         ]);
     }
 }

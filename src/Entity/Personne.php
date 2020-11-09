@@ -7,7 +7,7 @@ use App\Repository\PersonneRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass=PersonneRepository::class)
  * @ORM\HasLifecycleCallbacks()
@@ -24,6 +24,7 @@ class Personne
 
     /**
      * @ORM\Column(type="string", length=65)
+     * @Assert\NotBlank(message="Vous devez spécifiez un name")
      */
     private $name;
 
@@ -34,6 +35,13 @@ class Personne
 
     /**
      * @ORM\Column(type="smallint")
+     * @Assert\NotBlank(message="Vous devez reseigner l'age")
+     * @Assert\Range(
+     *     min= 1,
+     *     max= 199,
+     *     minMessage="Vous ne pouvez pas avoir un age inférieur à un",
+     *     maxMessage="Si vous avez plus de 200 ans vous n'avez rien à faire ici"
+     * )
      */
     private $age;
 
