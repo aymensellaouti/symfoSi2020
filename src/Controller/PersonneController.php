@@ -6,6 +6,7 @@ use App\Entity\Personne;
 use App\Form\PersonneType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -172,7 +173,8 @@ class PersonneController extends AbstractController
      * @Route("/edit/{id?0}", name="personne.edit")
      */
     public function addPersonne(
-        Personne $personne = null
+        Personne $personne = null,
+        Request $request
     ) {
         if(!$personne)
             $personne = new Personne();
@@ -180,6 +182,14 @@ class PersonneController extends AbstractController
         $form->remove('createdAt');
         $form->remove('updatedAt');
         $form->remove('pieceIdentite');
+        $form->handleRequest($request);
+        if($form->isSubmitted()) {
+            //Ajouter la personne dans la base de données
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($personne);
+            $em->flush();
+            return $this->redirectToRoute('personne.detail',['id' => $personne->getId()]);
+        }
         return $this->render('personne/add.html.twig', [
             'form' => $form->createView()
         ]);

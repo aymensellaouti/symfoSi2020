@@ -18,6 +18,25 @@
                     www.bootsnipp.com <br>
                     June 18, 1990
                 </p>
+                {#
+                    Si on a une piéce d'identité on l'affiche et on affiche un bouton Maj PI
+                    Sinon On affiche un bouton add Pi
+                #}
+                {% if personne.pieceIdentite %}
+                    <div class="alert alert-primary">
+                        {{ personne.pieceIdentite.type }} : {{ personne.pieceIdentite.identifiant }}
+                        <a href="{{ path('piece_identite.edit', {'personne': personne.id, 'id': personne.pieceIdentite.id }) }}">
+                            <i class="fas fa-id-card"></i>
+                        </a>.
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger">
+                        Vous ne dispez pas d'une pièce d'identité. Pour la reseigner tapez ici
+                        <a href="{{ path('piece_identite.edit', {'personne': personne.id}) }}">
+                            <i class="fas fa-edit"></i>
+                        </a>.
+                    </div>
+                {% endif %}
             </div>
         </div>
 

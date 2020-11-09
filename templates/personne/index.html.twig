@@ -3,7 +3,11 @@
 {% block title %}Hello PersonneController!{% endblock %}
 
 {% block body %}
-
+    <div class="row">
+        <a class="btn btn-primary" href="{{ path('personne.edit') }}">
+            Add Personne
+        </a>
+    </div>
     <div class="row">
         {% for personne in personnes %}
             <div class="card col-3 mb-3" style="width: 18rem;">
