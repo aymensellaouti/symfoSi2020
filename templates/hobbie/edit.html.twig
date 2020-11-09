@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Hobbie{% endblock %}
+
+{% block body %}
+    <h1>Edit Hobbie</h1>
+
+    {{ include('hobbie/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('hobbie_index') }}">back to list</a>
+
+    {{ include('hobbie/_delete_form.html.twig') }}
+{% endblock %}

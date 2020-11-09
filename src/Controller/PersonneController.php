@@ -184,6 +184,12 @@ class PersonneController extends AbstractController
         $form->remove('pieceIdentite');
         $form->handleRequest($request);
         if($form->isSubmitted()) {
+            $imageInfos = $form->get('image')->getData();
+            $imageName = $imageInfos->getClientOriginalName();
+            $newImageName = md5(uniqid()).$imageName;
+            $imageInfos->move($this->getParameter('personne_directory'),
+                $newImageName);
+            $personne->setPath('uploads/personne/'.$newImageName);
             //Ajouter la personne dans la base de données
             $em = $this->getDoctrine()->getManager();
             $em->persist($personne);
