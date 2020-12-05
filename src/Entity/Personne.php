@@ -30,6 +30,12 @@ class Personne
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank
+     * @Assert\Length(min="3", max="20",
+     *     minMessage="Le nom  a une taille inférieur à 3'",
+     *     maxMessage="Le nom  a une taille supérieur à 20",
+     *
+     * )
      */
     private $firstname;
 
@@ -39,7 +45,7 @@ class Personne
      * @Assert\Range(
      *     min= 1,
      *     max= 199,
-     *     minMessage="Vous ne pouvez pas avoir un age inférieur à un",
+     *     minMessage="Vous ne pouvez pas avoir un age inférieur à 1",
      *     maxMessage="Si vous avez plus de 200 ans vous n'avez rien à faire ici"
      * )
      */

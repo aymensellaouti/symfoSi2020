@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Form\CvType;
 use App\Form\ExempleType;
+use App\Service\PremierService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,6 +14,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TestController extends AbstractController
 {
+//    private $premierService;
+//    public function __constructor(PremierService $premierService) {
+//        dd('in constructor');
+//        dd($premierService);
+//        $this->premierService = $premierService;
+//    }
+
     /**
      * @Route("/first")
      */
@@ -79,5 +87,13 @@ class TestController extends AbstractController
             'age' => $cv['age'],
             'section' => $cv['section'],
         ]);
+    }
+
+    /**
+     * @Route("", name="accueil")
+     */
+    public function accueil(PremierService $premierService, $uploadPersonneDirectory) {
+        $aleatoire = $premierService->getRandomString(5);
+        return new Response("<h1>${aleatoire}</h1> ${uploadPersonneDirectory}");
     }
 }

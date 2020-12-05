@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Personne;
 use App\Form\PersonneType;
+use App\Service\ImageUploaderService;
+use App\services\Utils;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,12 +21,12 @@ class PersonneController extends AbstractController
     /**
      * @Route("/", name="personne.list")
      */
-    public function index()
+    public function index(LoggerInterface $logger)
     {
         // Récupérer le Repository
         $repository = $this->getDoctrine()->getRepository(Personne::class);
         $personnes = $repository->findAll();
-
+        $logger->info('Récupération de la liste des personnes de la base de données');
         return $this->render('personne/index.html.twig', [
             'personnes' => $personnes,
         ]);
@@ -174,7 +177,9 @@ class PersonneController extends AbstractController
      */
     public function addPersonne(
         Personne $personne = null,
-        Request $request
+        Request $request,
+        ImageUploaderService $imageUploaderService,
+        $uploadPersonneDirectory
     ) {
         if(!$personne)
             $personne = new Personne();
@@ -192,13 +197,7 @@ class PersonneController extends AbstractController
              * Lors del'upload on ne veut pas avoir 2 images avec le meme nom
              * */
             if ($imageInfos) {
-                $imageName = $imageInfos->getClientOriginalName();
-                $newImageName = md5(uniqid()).$imageName;
-                /*
-                 * Copier l'image temporaire qu'on a uploadé dans un dossier qu'on va spécifier
-                 * */
-                $imageInfos->move($this->getParameter('personne_directory'),
-                    $newImageName);
+                $newImageName = $imageUploaderService->uploadFile($imageInfos, $uploadPersonneDirectory);
                 $personne->setPath('uploads/personne/'.$newImageName);
             }
 

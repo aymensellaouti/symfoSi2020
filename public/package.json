@@ -1,0 +1,15 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "Ce site web me permet de gérer des cvs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aymen Sellaouti",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "select2": "^4.0.13"
+  }
+}

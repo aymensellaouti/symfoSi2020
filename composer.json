@@ -5,6 +5,7 @@
         "php": ">=7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "easycorp/easyadmin-bundle": "^3.1",
         "fzaninotto/faker": "^1.9",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "5.1.*",

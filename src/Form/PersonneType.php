@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Image;
 
 class PersonneType extends AbstractType
 {
@@ -23,7 +24,10 @@ class PersonneType extends AbstractType
             ->add('path')
             ->add('image', FileType::class, [
                 'mapped' => false,
-                'required' => false
+                'required' => false,
+                'constraints' => [
+                    new Image()
+                ]
             ] )
             ->add('createdAt')
             ->add('updatedAt')
@@ -34,9 +38,16 @@ class PersonneType extends AbstractType
                     return $er->createQueryBuilder('j')
                        ->orderBy('j.designation', 'ASC');
                 },
-                'choice_label' => 'designation'
+                'choice_label' => 'designation',
+                'attr' => [
+                    'class' => 'select2'
+                ]
             ])
-            ->add('hobbies')
+            ->add('hobbies', null, [
+                'attr' => [
+                    'class' => 'select2'
+                ]
+            ])
             ->add('Ajouter', SubmitType::class)
         ;
     }
