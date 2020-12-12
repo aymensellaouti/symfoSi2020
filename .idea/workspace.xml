@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80299529-5538-4259-960c-c4c9c75bf743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/select2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ImageUploaderService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/PremierService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/si22020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/si22020.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PersonneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonneController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Personne.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Personne.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PersonneType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PersonneType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +200,8 @@
       <workItem from="1606554726724" duration="1117000" />
       <workItem from="1606893202002" duration="164000" />
       <workItem from="1606893694988" duration="49000" />
-      <workItem from="1607161126238" duration="5960000" />
+      <workItem from="1607161126238" duration="6674000" />
+      <workItem from="1607769106912" duration="3757000" />
     </task>
     <servers />
   </component>
@@ -225,10 +214,10 @@
     </state>
     <state x="527" y="232" key="#Notifications/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1601905082666" />
     <state x="527" y="232" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1602485542702" />
-    <state x="572" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1604333354020">
+    <state x="572" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1607769582402">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="572" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1604333354020" />
+    <state x="572" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1607769582402" />
     <state x="572" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1603880016902" />
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604330913778">
       <screen x="0" y="0" width="1536" height="824" />
@@ -258,5 +247,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1601906199065" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607772648795">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1607772648795" />
   </component>
 </project>

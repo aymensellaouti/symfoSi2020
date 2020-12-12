@@ -7,6 +7,7 @@ use App\Form\PersonneType;
 use App\Service\ImageUploaderService;
 use App\services\Utils;
 use Psr\Log\LoggerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,15 +15,19 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
+ *
  * @Route("/personne")
  */
 class PersonneController extends AbstractController
 {
     /**
+     *
      * @Route("/", name="personne.list")
      */
     public function index(LoggerInterface $logger)
     {
+        $user=$this->getUser();
+        dump($user);
         // Récupérer le Repository
         $repository = $this->getDoctrine()->getRepository(Personne::class);
         $personnes = $repository->findAll();
@@ -173,6 +178,7 @@ class PersonneController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/edit/{id?0}", name="personne.edit")
      */
     public function addPersonne(
